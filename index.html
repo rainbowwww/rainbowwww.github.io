@@ -229,6 +229,133 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/26/http简介/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="caihong xu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="rainbowwww">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/26/http简介/" itemprop="url">http简介</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-26T12:58:55+08:00">
+                2018-04-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>###什么是HTTP？<br>         全称为：超文本传输协议(Hyper Text Transfer Protocol)<br>         两个电脑之间传输内容的协议,HTTP 的作用就是指导浏览器和服务器如何进行沟通。</p>
+<p>###什么是curl？<br>         如图所示:<br>         ![shell]{file:///D:/QQPCmgr/Desktop/QQ%E6%88%AA%E5%9B%BE20180426154807.png}</p>
+<p>###HTTP的get请求示例：<br>        1.用curl来示例：<br>         <em>用curl在gitbash上来创造一个请求：<br>          <code>curl -s -v -- https://www.baidu.com</code>
+         </em>得到请求结果如下：<br>          <code>&gt; GET / HTTP/1.1  //动词 路径 协议/版本</code><br>          <code>&gt; Host: www.baidu.com  // Key1: value1</code><br>          <code>&gt; User-Agent: curl/7.55.0  // Key2: value1</code><br>          <code>&gt; Accept: */*  // Key3: value1</code><br>          <code>&gt;  //换行</code><br>         <em>得到的响应如下：<br>            <code>&lt; Accept-Ranges: bytes</code><br>            <code>&lt; Cache-Control: private, no-cache, no-store, proxy-revalidate, no-transform</code><br>            <code>&lt; Connection: Keep-Alive</code><br>            <code>&lt; Content-Length: 2443</code><br>            <code>&lt; Content-Type: text/html</code><br>            <code>&lt; Date: Thu, 26 Apr 2018 08:00:23 GMT</code><br>            <code>&lt; Etag: &quot;588603e2-98b&quot;</code><br>            <code>&lt; Last-Modified: Mon, 23 Jan 2017 13:23:46 GMT</code><br>            <code>&lt; Pragma: no-cache</code><br>            <code>&lt; Server: bfe/1.0.8.18</code><br>            <code>&lt; Set-Cookie: BDORZ=27315; max-age=86400; domain=.baidu.com; path=/</code><br>            <code>&lt;</code><br>        2.用 Chrome 查看请求
+         </em>F12打开 Network<br>         <em>输入<a href="https://www.baidu.com" target="_blank" rel="noopener">https://www.baidu.com</a>
+         </em>在 Network 点击，查看 request，点击「view source」<br>         <em>可以看到请求如下：<br>            <code>GET / HTTP/1.1</code><br>            <code>Host: www.baidu.com</code><br>            <code>Connection: keep-alive</code><br>            <code>Cache-Control: max-age=0</code><br>            <code>Upgrade-Insecure-Requests: 1</code><br>            <code>略……</code><br>            <code></code>
+         </em>可以看到响应如下：<br>            <code>HTTP/1.1 200 OK</code><br>            <code>Bdpagetype: 2</code><br>            <code>Bdqid: 0x9fcf424f0002e78a</code><br>            <code>Cache-Control: private</code><br>            <code>Connection: Keep-Alive</code><br>            <code>Content-Encoding: gzip</code><br>            <code></code><br>            <code>略……</code><br>      <strong>总结get请求</strong><br>           由三个部分组成：<br>           <code>1 动词 路径 协议/版本</code><br>           <code>2 Key1: value1</code><br>           <code>2 Key2: value2</code><br>           <code>2 Key3: value3</code><br>           <code>3</code><br>        &gt;post 请求会多一个部分为要上传的数据。<br>      <strong>总结get响应</strong><br>           <code>1 协议/版本号 状态码 状态解释</code><br>           <code>2 Key1: value1</code><br>           <code>2 Key2: value2</code><br>           <code>2 Content-Length: 17931</code><br>           <code>2 Content-Type: text/html</code><br>           <code>3</code><br>        &gt;post 响应会多一个部分为要 要下载的内容</p>
+<hr>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/25/脚本/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -895,7 +1022,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
