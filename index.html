@@ -229,6 +229,160 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/23/网页布局/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="caihong xu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="rainbowwww">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/23/网页布局/" itemprop="url">网页布局</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-23T11:28:11+08:00">
+                2018-05-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="布局流程分为两种"><a href="#布局流程分为两种" class="headerlink" title="布局流程分为两种"></a>布局流程分为两种</h2><ol>
+<li>需要支持IE8用float布局定宽。</li>
+<li>不需要支持IE8用flex布局弹性宽度。<br>基本原则：</li>
+</ol>
+<ul>
+<li>不到万不得已，不要写死width和height</li>
+<li>尽量用高级语法，如calc、flex</li>
+<li>如果是IE，就全部写死<h3 id="float布局套路："><a href="#float布局套路：" class="headerlink" title="float布局套路："></a>float布局套路：</h3></li>
+</ul>
+<ol>
+<li>给儿子全加float:left（right）</li>
+<li><p>老子加.clearfix<br>float布局：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</span><br><span class="line">    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;</span><br><span class="line">    &lt;title&gt;Document&lt;/title&gt;</span><br><span class="line">    &lt;style&gt;</span><br><span class="line">        .parent&#123;</span><br><span class="line">            border:2px solid green;</span><br><span class="line">        &#125;</span><br><span class="line">        .clearfix::after&#123;</span><br><span class="line">            content: &quot;&quot;;</span><br><span class="line">            display: block;</span><br><span class="line">            clear: both;</span><br><span class="line">        &#125;</span><br><span class="line">        .clearfix&#123;</span><br><span class="line">                    zoom: 1;</span><br><span class="line">                &#125;</span><br><span class="line">        .child:nth-child(1)&#123;</span><br><span class="line">            width: 30%;</span><br><span class="line">            background: rgb(248, 245, 53);</span><br><span class="line">            float: left;</span><br><span class="line">        &#125;</span><br><span class="line">        .child:nth-child(2)&#123;</span><br><span class="line">            width: 70%;</span><br><span class="line">            background: rgb(221, 29, 55);</span><br><span class="line">            float: left;</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div class=&quot;parent clearfix&quot;&gt;</span><br><span class="line">        &lt;div class=&quot;child&quot;&gt;内容1&lt;/div&gt;</span><br><span class="line">        &lt;div class=&quot;child&quot;&gt;内容2&lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<p>效果如图：<img src="https://i.loli.net/2018/05/23/5b04f470cbf07.png" alt="布局截图.png"><br>注意：布局的div不要添加任何margin、padding等内容，以免造成不必要的bug。<br>  需要的话在内部进行添加div进行设置。</p>
+<h3 id="flex布局："><a href="#flex布局：" class="headerlink" title="flex布局："></a>flex布局：</h3></li>
+</ol>
+<ul>
+<li>老子加 display: flex</li>
+<li><p>老子加 justify-content: space-between;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</span><br><span class="line">    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;</span><br><span class="line">    &lt;title&gt;Document&lt;/title&gt;</span><br><span class="line">    &lt;style&gt;</span><br><span class="line">       .parent&#123;</span><br><span class="line">           display: flex;</span><br><span class="line">           background:#ddd;</span><br><span class="line">       &#125;</span><br><span class="line">       .child&#123;</span><br><span class="line">           width: 100%;</span><br><span class="line">           height: 50px;</span><br><span class="line">           background: white;</span><br><span class="line">           margin: 10px;</span><br><span class="line">       &#125;</span><br><span class="line">    &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div class=&quot;parent&quot;&gt;</span><br><span class="line">        &lt;div class=&quot;child&quot;&gt;内容1&lt;/div&gt;</span><br><span class="line">        &lt;div class=&quot;child&quot;&gt;内容2&lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<p>效果如图：<img src="https://i.loli.net/2018/05/23/5b0507b21a3ea.png" alt="flex布局.png"><br>flex的相关知识<br><img src="https://i.loli.net/2018/05/23/5b05021216781.png" alt="flex相关知识.png"><br>flex container 的属性</p>
+</li>
+<li>flex-direction 方向</li>
+<li>flex-wrap 换行</li>
+<li>flex-flow 上面两个的简写</li>
+<li>justify-content 主轴对齐方式(多余的空间的显示方式)</li>
+<li>align-items 侧轴对齐方式（高度不一样时会体现出来）</li>
+<li>align-content 多行/列内容对齐方式(控制行与行之间的空隙)<br>遇到问题，查看是否固定了高度或宽度等查看出现的原因。<br>flex item 的属性</li>
+<li>flex-grow 增长比例(空间过多时)</li>
+<li>flex-shrink 收缩比例(空间不够时)</li>
+<li>flex-basis 默认大小</li>
+<li>flex 上面三个的缩写</li>
+<li>order 顺序代替双飞翼</li>
+<li>align-self 自身的对齐方式<br>###div里面的div的居中方式<br>1.若里面的div高度是确定的上下设置父元素padding，左右设置子元素margin：0 auto;<br>2.子元素定宽定高可设置margin:auto;position:absolute; top:0; left:0; right:0;<br>bottom:0;<br>3.若子元素不定宽高设置flex，父元素display:flex; justify-content:center;<br>align-item:center;<br>详细可参考：方应杭的CSS居中的七种方法。<br>###文字的居中<br>1.水平居中可用text-align:center;</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/07/个别标签详解/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1543,7 +1697,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
