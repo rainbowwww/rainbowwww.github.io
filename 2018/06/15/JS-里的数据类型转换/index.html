@@ -86,10 +86,14 @@
 <meta property="og:site_name" content="rainbowwww">
 <meta property="og:description" content="任意类型转字符串 数字类型转为字符串   toString方法: 12var n=1;n.toString();//&amp;quot;1&amp;quot;  数字类型+’’ 121+&amp;apos;&amp;apos;// &amp;apos;1&amp;apos;   *  布尔类型转为字符串   toString方法： 12var b =trueb.toString(); //&amp;quot;true&amp;quot;  布尔类型+’’ 12">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-06-16T15:19:42.759Z">
+<meta property="og:image" content="https://video.jirengu.com/FrpnWPAjH4_Zh1Ru58nEIC0I4onn">
+<meta property="og:image" content="https://i.loli.net/2018/06/16/5b252a37b265d.png">
+<meta property="og:image" content="https://i.loli.net/2018/06/16/5b2529c10050d.png">
+<meta property="og:updated_time" content="2018-06-16T15:28:20.982Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS 里的数据类型转换">
 <meta name="twitter:description" content="任意类型转字符串 数字类型转为字符串   toString方法: 12var n=1;n.toString();//&amp;quot;1&amp;quot;  数字类型+’’ 121+&amp;apos;&amp;apos;// &amp;apos;1&amp;apos;   *  布尔类型转为字符串   toString方法： 12var b =trueb.toString(); //&amp;quot;true&amp;quot;  布尔类型+’’ 12">
+<meta name="twitter:image" content="https://video.jirengu.com/FrpnWPAjH4_Zh1Ru58nEIC0I4onn">
 
 
 
@@ -341,14 +345,56 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var u = undefined;</span><br><span class="line">u.toString();</span><br><span class="line">//报错Cannot read property &apos;toString&apos; of undefined</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>undefined类型+’’</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">undefined+&apos;&apos;</span><br><span class="line">//&apos;underfined&apos;</span><br><span class="line">5. object类型转为字符串</span><br><span class="line">* toString方法：</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">undefined+&apos;&apos;</span><br><span class="line">//&apos;underfined&apos;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<p>var o = {‘name’:’xxx’};<br>o.toString();<br>//“[object Object]”  不能打印出来所写的对象内容<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">* object类型+&apos;&apos;</span><br></pre></td></tr></table></figure></p>
-<p>var o = {‘name’:’xxx’};<br>o+’’;<br>//“[object Object]”<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">consol.log就是使用了toString这样的原理，括号里面理论上只能接字符串,里面内容自动转为字符串。</span><br><span class="line">6. symbol暂不涉及</span><br><span class="line"></span><br><span class="line">7. 还有一种全局方法String(x)</span><br><span class="line">效果如图</span><br><span class="line">![string方法](https://video.jirengu.com/FrpnWPAjH4_Zh1Ru58nEIC0I4onn)</span><br><span class="line">### 任意类型转布尔</span><br><span class="line">1. Boolean(x)</span><br><span class="line">![448056452308551129.png](https://i.loli.net/2018/06/16/5b252a37b265d.png)</span><br><span class="line">2.!!x</span><br><span class="line">![587603914030503740.png](https://i.loli.net/2018/06/16/5b2529c10050d.png)</span><br><span class="line">3.有五种特殊值变成Boolean是false</span><br><span class="line">* number类型里面有两个布尔值是false ： NAN和0</span><br><span class="line">* string类型里面一个布尔值是false： &apos;&apos;空字符串</span><br><span class="line">* null类型就一个null是false</span><br><span class="line">* undefined类型就一个undefined是false</span><br><span class="line">* 所有的对象都是true</span><br><span class="line"></span><br><span class="line">### 任意类型转number</span><br><span class="line">1. number()方法</span><br><span class="line">2. parseInt() 全局函数方法，遇到不能解析的值便返回。</span><br><span class="line">3. 想转小数的话parseFloat()</span><br><span class="line">4. 任意类型-0,即有parseInt功能既有parseFloat功能</span><br><span class="line">5.类型前面写&apos;+&apos;即以数字形式取它原本的值</span><br><span class="line">###内存</span><br><span class="line">1. 你买一个8G的内存条</span><br><span class="line">2. 操作系统开机即占用512MB</span><br><span class="line">3. Chrome打开即占用1G内存</span><br><span class="line">4. Chrome各每个网页分配一定数量的内存</span><br><span class="line">5. 这些内存要分给页面渲染器、网络模块、浏览器外壳和JS引擎（V8引擎）</span><br><span class="line">6. JS引擎将内存分为代码区和数据区</span><br><span class="line">7. 我们只研究数据区</span><br><span class="line">8. 数据区分为Stack（栈内存）和Heap（堆内存）</span><br><span class="line">9. 简单类型的数据直接存在Stack里</span><br><span class="line">10. 复杂类型的数据是把Heap地址存在Stack里</span><br><span class="line"></span><br><span class="line">### 深复制和浅复制</span><br></pre></td></tr></table></figure></p>
-<p>var a = 1<br>var b = a<br>b = 2 //这个时候改变 b<br>a 完全不受 b 的影响<br>那么我们就说这是一个深复制<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">对于简单类型的数据来说，赋值就是深拷贝。</span><br><span class="line">对于复杂类型的数据（对象）来说，才要区分浅拷贝和深拷贝。</span><br><span class="line"></span><br><span class="line">这是一个浅拷贝的例子</span><br></pre></td></tr></table></figure></p>
-<p>var a = {name: ‘frank’}<br>var b = a<br>b.name = ‘b’<br>a.name === ‘b’ // true<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">因为我们对 b 操作后，a 也变了</span><br><span class="line"></span><br><span class="line">什么是深拷贝了，就是对 Heap 内存进行完全的拷贝。</span><br></pre></td></tr></table></figure></p>
-<p>var a = {name: ‘frank’}<br>var b = deepClone(a) // deepClone 还不知道怎么实现<br>b.name = ‘b’<br>a.name === ‘a’ // true<br><code>`</code></p>
+<ol start="5">
+<li>object类型转为字符串</li>
+</ol>
+<ul>
+<li><p>toString方法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var o = &#123;&apos;name&apos;:&apos;xxx&apos;&#125;;</span><br><span class="line">o.toString();</span><br><span class="line">//&quot;[object Object]&quot;  不能打印出来所写的对象内容</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>object类型+’’</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var o = &#123;&apos;name&apos;:&apos;xxx&apos;&#125;;</span><br><span class="line">o+&apos;&apos;;</span><br><span class="line">//&quot;[object Object]&quot;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>consol.log就是使用了toString这样的原理，括号里面理论上只能接字符串,里面内容自动转为字符串。</p>
+<ol start="6">
+<li><p>symbol暂不涉及</p>
+</li>
+<li><p>还有一种全局方法String(x)<br>效果如图<br><img src="https://video.jirengu.com/FrpnWPAjH4_Zh1Ru58nEIC0I4onn" alt="string方法"></p>
+<h3 id="任意类型转布尔"><a href="#任意类型转布尔" class="headerlink" title="任意类型转布尔"></a>任意类型转布尔</h3></li>
+<li>Boolean(x)<br><img src="https://i.loli.net/2018/06/16/5b252a37b265d.png" alt="448056452308551129.png"><br>2.!!x<br><img src="https://i.loli.net/2018/06/16/5b2529c10050d.png" alt="587603914030503740.png"><br>3.有五种特殊值变成Boolean是false</li>
+</ol>
+<ul>
+<li>number类型里面有两个布尔值是false ： NAN和0</li>
+<li>string类型里面一个布尔值是false： ‘’空字符串</li>
+<li>null类型就一个null是false</li>
+<li>undefined类型就一个undefined是false</li>
+<li>所有的对象都是true</li>
+</ul>
+<h3 id="任意类型转number"><a href="#任意类型转number" class="headerlink" title="任意类型转number"></a>任意类型转number</h3><ol>
+<li>number()方法</li>
+<li>parseInt() 全局函数方法，遇到不能解析的值便返回。</li>
+<li>想转小数的话parseFloat()</li>
+<li>任意类型-0,即有parseInt功能既有parseFloat功能<br>5.类型前面写’+’即以数字形式取它原本的值<h3 id="内存"><a href="#内存" class="headerlink" title="内存"></a>内存</h3></li>
+<li>你买一个8G的内存条</li>
+<li>操作系统开机即占用512MB</li>
+<li>Chrome打开即占用1G内存</li>
+<li>Chrome各每个网页分配一定数量的内存</li>
+<li>这些内存要分给页面渲染器、网络模块、浏览器外壳和JS引擎（V8引擎）</li>
+<li>JS引擎将内存分为代码区和数据区</li>
+<li>我们只研究数据区</li>
+<li>数据区分为Stack（栈内存）和Heap（堆内存）</li>
+<li>简单类型的数据直接存在Stack里</li>
+<li>复杂类型的数据是把Heap地址存在Stack里</li>
+</ol>
+<h3 id="深复制和浅复制"><a href="#深复制和浅复制" class="headerlink" title="深复制和浅复制"></a>深复制和浅复制</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var a = 1</span><br><span class="line">var b = a</span><br><span class="line">b = 2 //这个时候改变 b</span><br><span class="line">a 完全不受 b 的影响</span><br><span class="line">那么我们就说这是一个深复制</span><br></pre></td></tr></table></figure>
+<p>对于简单类型的数据来说，赋值就是深拷贝。<br>对于复杂类型的数据（对象）来说，才要区分浅拷贝和深拷贝。</p>
+<p>这是一个浅拷贝的例子<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var a = &#123;name: &apos;frank&apos;&#125;</span><br><span class="line">var b = a</span><br><span class="line">b.name = &apos;b&apos;</span><br><span class="line">a.name === &apos;b&apos; // true</span><br></pre></td></tr></table></figure></p>
+<p>因为我们对 b 操作后，a 也变了</p>
+<p>什么是深拷贝了，就是对 Heap 内存进行完全的拷贝。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var a = &#123;name: &apos;frank&apos;&#125;</span><br><span class="line">var b = deepClone(a) // deepClone 还不知道怎么实现</span><br><span class="line">b.name = &apos;b&apos;</span><br><span class="line">a.name === &apos;a&apos; // true</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -504,7 +550,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#任意类型转字符串"><span class="nav-number">1.</span> <span class="nav-text">任意类型转字符串</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#任意类型转字符串"><span class="nav-number">1.</span> <span class="nav-text">任意类型转字符串</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#任意类型转布尔"><span class="nav-number">2.</span> <span class="nav-text">任意类型转布尔</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#任意类型转number"><span class="nav-number">3.</span> <span class="nav-text">任意类型转number</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内存"><span class="nav-number">4.</span> <span class="nav-text">内存</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#深复制和浅复制"><span class="nav-number">5.</span> <span class="nav-text">深复制和浅复制</span></a></li></ol></div>
             
 
           </div>
