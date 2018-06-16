@@ -89,7 +89,7 @@
 <meta property="og:image" content="https://video.jirengu.com/FrpnWPAjH4_Zh1Ru58nEIC0I4onn">
 <meta property="og:image" content="https://i.loli.net/2018/06/16/5b252a37b265d.png">
 <meta property="og:image" content="https://i.loli.net/2018/06/16/5b2529c10050d.png">
-<meta property="og:updated_time" content="2018-06-16T15:28:20.982Z">
+<meta property="og:updated_time" content="2018-06-16T15:34:19.419Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS 里的数据类型转换">
 <meta name="twitter:description" content="任意类型转字符串 数字类型转为字符串   toString方法: 12var n=1;n.toString();//&amp;quot;1&amp;quot;  数字类型+’’ 121+&amp;apos;&amp;apos;// &amp;apos;1&amp;apos;   *  布尔类型转为字符串   toString方法： 12var b =trueb.toString(); //&amp;quot;true&amp;quot;  布尔类型+’’ 12">
@@ -352,13 +352,13 @@
 <li>object类型转为字符串</li>
 </ol>
 <ul>
-<li><p>toString方法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var o = &#123;&apos;name&apos;:&apos;xxx&apos;&#125;;</span><br><span class="line">o.toString();</span><br><span class="line">//&quot;[object Object]&quot;  不能打印出来所写的对象内容</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>object类型+’’</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var o = &#123;&apos;name&apos;:&apos;xxx&apos;&#125;;</span><br><span class="line">o+&apos;&apos;;</span><br><span class="line">//&quot;[object Object]&quot;</span><br></pre></td></tr></table></figure>
-</li>
+<li>toString方法：</li>
 </ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var o = &#123;&apos;name&apos;:&apos;xxx&apos;&#125;;</span><br><span class="line">o.toString();</span><br><span class="line">//&quot;[object Object]&quot;  不能打印出来所写的对象内容</span><br></pre></td></tr></table></figure>
+<ul>
+<li>object类型+’’</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var o = &#123;&apos;name&apos;:&apos;xxx&apos;&#125;;</span><br><span class="line">o+&apos;&apos;;</span><br><span class="line">//&quot;[object Object]&quot;</span><br></pre></td></tr></table></figure>
 <p>consol.log就是使用了toString这样的原理，括号里面理论上只能接字符串,里面内容自动转为字符串。</p>
 <ol start="6">
 <li><p>symbol暂不涉及</p>
