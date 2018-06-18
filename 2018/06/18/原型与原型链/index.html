@@ -79,17 +79,20 @@
 
 
 
-<meta name="description" content="###什么是HTTP？         全称为：超文本传输协议(Hyper Text Transfer Protocol)         两个电脑之间传输内容的协议,HTTP 的作用就是指导浏览器和服务器如何进行沟通。 ###什么是curl？         &amp;gt;transfer a url ###HTTP的get请求示例：        1.用curl来示例：         用curl在">
+<meta name="description" content="全局对象 windowECMAScript 规定全局对象叫做 global，但是浏览器把 window 作为全局对象（浏览器先存在的） window 就是一个哈希表，有很多属性。 window 的属性就是全局变量。 这些全局变量分为两种：  一种是 ECMAScript 规定的   global.parseInt global.parseFloat global.Number global.Str">
 <meta property="og:type" content="article">
-<meta property="og:title" content="http简介">
-<meta property="og:url" content="http://yoursite.com/2018/04/26/http简介/index.html">
+<meta property="og:title" content="原型与原型链">
+<meta property="og:url" content="http://yoursite.com/2018/06/18/原型与原型链/index.html">
 <meta property="og:site_name" content="rainbowwww">
-<meta property="og:description" content="###什么是HTTP？         全称为：超文本传输协议(Hyper Text Transfer Protocol)         两个电脑之间传输内容的协议,HTTP 的作用就是指导浏览器和服务器如何进行沟通。 ###什么是curl？         &amp;gt;transfer a url ###HTTP的get请求示例：        1.用curl来示例：         用curl在">
+<meta property="og:description" content="全局对象 windowECMAScript 规定全局对象叫做 global，但是浏览器把 window 作为全局对象（浏览器先存在的） window 就是一个哈希表，有很多属性。 window 的属性就是全局变量。 这些全局变量分为两种：  一种是 ECMAScript 规定的   global.parseInt global.parseFloat global.Number global.Str">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-04-26T09:22:31.038Z">
+<meta property="og:image" content="https://i.loli.net/2018/06/18/5b27c52161c8f.png">
+<meta property="og:image" content="https://i.loli.net/2018/06/18/5b27c522dd1bc.png">
+<meta property="og:updated_time" content="2018-06-18T14:51:39.636Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="http简介">
-<meta name="twitter:description" content="###什么是HTTP？         全称为：超文本传输协议(Hyper Text Transfer Protocol)         两个电脑之间传输内容的协议,HTTP 的作用就是指导浏览器和服务器如何进行沟通。 ###什么是curl？         &amp;gt;transfer a url ###HTTP的get请求示例：        1.用curl来示例：         用curl在">
+<meta name="twitter:title" content="原型与原型链">
+<meta name="twitter:description" content="全局对象 windowECMAScript 规定全局对象叫做 global，但是浏览器把 window 作为全局对象（浏览器先存在的） window 就是一个哈希表，有很多属性。 window 的属性就是全局变量。 这些全局变量分为两种：  一种是 ECMAScript 规定的   global.parseInt global.parseFloat global.Number global.Str">
+<meta name="twitter:image" content="https://i.loli.net/2018/06/18/5b27c52161c8f.png">
 
 
 
@@ -119,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/04/26/http简介/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/06/18/原型与原型链/"/>
 
 
 
 
 
-  <title>http简介 | rainbowwww</title>
+  <title>原型与原型链 | rainbowwww</title>
   
 
 
@@ -232,7 +235,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/26/http简介/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/18/原型与原型链/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="caihong xu">
@@ -249,7 +252,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">http简介</h1>
+          <h1 class="post-title" itemprop="name headline">原型与原型链</h1>
         
 
         <div class="post-meta">
@@ -261,8 +264,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-26T12:58:55+08:00">
-                2018-04-26
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-06-18T22:46:03+08:00">
+                2018-06-18
               </time>
             
 
@@ -299,14 +302,42 @@
       
 
       
-        <p>###什么是HTTP？<br>         全称为：超文本传输协议(Hyper Text Transfer Protocol)<br>         两个电脑之间传输内容的协议,HTTP 的作用就是指导浏览器和服务器如何进行沟通。</p>
-<p>###什么是curl？<br>         &gt;transfer a url</p>
-<p>###HTTP的get请求示例：<br>        1.用curl来示例：<br>         <em>用curl在gitbash上来创造一个请求：<br>          <code>curl -s -v -- https://www.baidu.com</code>
-         </em>得到请求结果如下：<br>          <code>&gt; GET / HTTP/1.1  //动词 路径 协议/版本</code><br>          <code>&gt; Host: www.baidu.com  // Key1: value1</code><br>          <code>&gt; User-Agent: curl/7.55.0  // Key2: value1</code><br>          <code>&gt; Accept: */*  // Key3: value1</code><br>          <code>&gt;  //换行</code><br>         <em>得到的响应如下：<br>            <code>&lt; Accept-Ranges: bytes</code><br>            <code>&lt; Cache-Control: private, no-cache, no-store, proxy-revalidate, no-transform</code><br>            <code>&lt; Connection: Keep-Alive</code><br>            <code>&lt; Content-Length: 2443</code><br>            <code>&lt; Content-Type: text/html</code><br>            <code>&lt; Date: Thu, 26 Apr 2018 08:00:23 GMT</code><br>            <code>&lt; Etag: &quot;588603e2-98b&quot;</code><br>            <code>&lt; Last-Modified: Mon, 23 Jan 2017 13:23:46 GMT</code><br>            <code>&lt; Pragma: no-cache</code><br>            <code>&lt; Server: bfe/1.0.8.18</code><br>            <code>&lt; Set-Cookie: BDORZ=27315; max-age=86400; domain=.baidu.com; path=/</code><br>            <code>&lt;</code><br>        2.用 Chrome 查看请求
-         </em>F12打开 Network<br>         <em>输入<a href="https://www.baidu.com" target="_blank" rel="noopener">https://www.baidu.com</a>
-         </em>在 Network 点击，查看 request，点击「view source」<br>         <em>可以看到请求如下：<br>            <code>GET / HTTP/1.1</code><br>            <code>Host: www.baidu.com</code><br>            <code>Connection: keep-alive</code><br>            <code>Cache-Control: max-age=0</code><br>            <code>Upgrade-Insecure-Requests: 1</code><br>            <code>略……</code><br>            <code></code>
-         </em>可以看到响应如下：<br>            <code>HTTP/1.1 200 OK</code><br>            <code>Bdpagetype: 2</code><br>            <code>Bdqid: 0x9fcf424f0002e78a</code><br>            <code>Cache-Control: private</code><br>            <code>Connection: Keep-Alive</code><br>            <code>Content-Encoding: gzip</code><br>            <code></code><br>            <code>略……</code><br>      <strong>总结get请求</strong><br>           由三个部分组成：<br>           <code>1 动词 路径 协议/版本</code><br>           <code>2 Key1: value1</code><br>           <code>2 Key2: value2</code><br>           <code>2 Key3: value3</code><br>           <code>3</code><br>        &gt;post 请求会多一个部分为要上传的数据。<br>      <strong>总结get响应</strong><br>           <code>1 协议/版本号 状态码 状态解释</code><br>           <code>2 Key1: value1</code><br>           <code>2 Key2: value2</code><br>           <code>2 Content-Length: 17931</code><br>           <code>2 Content-Type: text/html</code><br>           <code>3</code><br>        &gt;post 响应会多一个部分为要 要下载的内容</p>
-<hr>
+        <h3 id="全局对象-window"><a href="#全局对象-window" class="headerlink" title="全局对象 window"></a>全局对象 window</h3><p>ECMAScript 规定全局对象叫做 global，但是浏览器把 window 作为全局对象（浏览器先存在的）</p>
+<p>window 就是一个哈希表，有很多属性。</p>
+<p>window 的属性就是全局变量。</p>
+<p>这些全局变量分为两种：</p>
+<ol>
+<li>一种是 ECMAScript 规定的</li>
+</ol>
+<ul>
+<li>global.parseInt</li>
+<li>global.parseFloat</li>
+<li>global.Number</li>
+<li>global.String</li>
+<li>global.Boolean</li>
+<li>global.Object</li>
+</ul>
+<ol start="2">
+<li>一种是浏览器自己加的属性</li>
+</ol>
+<ul>
+<li>window.alert</li>
+<li>window.prompt</li>
+<li>window.comfirm</li>
+<li>window.console.log</li>
+<li>window.console.dir</li>
+<li>window.document</li>
+<li>window.document.createElement</li>
+<li>window.document.getElementById<br>写代码的时候window可以不写。<br>###简单类型与对象的区别<br>var n1 = 1 与 var n2 = new Number(1);内存不同。基本类型没有属性的，但是有个暂时转换的功能<br><img src="https://i.loli.net/2018/06/18/5b27c52161c8f.png" alt="n1andn2.png"><br>var s1 = x 与 var s2 = new String(‘x’);<br>同上！<br>var o1 = {} 与 var o2 = new Object() ;两者完全没有区别，但不但表两个是相等的地址是不一样的。请看内存图<br><img src="https://i.loli.net/2018/06/18/5b27c522dd1bc.png" alt="o1ando2.png"></li>
+</ul>
+<p>字符串的一些小操作<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var s  = &apos;wawj&apos; ;</span><br><span class="line">s.charAt(0);//获取的是索引所对应的字符；</span><br><span class="line">s.charcodeAt(0);//获取索引所对应字符的Unicode编码；</span><br><span class="line">(100).toString(16)//获取数字为100的16进制数。</span><br><span class="line">&apos;    username      &apos;.trim  去除两边的空格</span><br><span class="line">var s1 = &apos;hello&apos;</span><br><span class="line">var s2 = &apos;world&apos;</span><br><span class="line">s1.contact(s2)  // &apos;helloworld&apos; 得到的第三的字符串，跟命令行中的cat命令有关系</span><br><span class="line">s1.slice(0,2); //&apos;he&apos;  从索引0到2，包前不包后。</span><br><span class="line">s1.replace(e,o); // &apos;hollo&apos;  替换</span><br></pre></td></tr></table></figure></p>
+<h3 id="公共属性"><a href="#公共属性" class="headerlink" title="公共属性"></a>公共属性</h3><p>所有对象都有 toString 和 valueOf 属性，那么我们是否有必要给每个对象一个 toString 和 valueOf 呢？</p>
+<p>明显不需要。</p>
+<p>JS 的做法是把 toString 和 valueOf 放在一个对象里（暂且叫做公用属性组成的对象）</p>
+<p>然后让每一个对象的 <strong>proto</strong> 存储这个「公用属性组成的对象」的地址。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">o1.toString ===o2.toString  //true  toString是公共属性所以有相同的存储地址</span><br></pre></td></tr></table></figure>
+<p>object 的属性是所有对象的共有属性<br>共有属性是个hash如果没有被引用的话被就被要被垃圾回收掉，object.prototype 在引用，prototype是object的共有属性(原型)。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var o1 = &#123;&#125;</span><br><span class="line">o1.__proto__ ===object.prototype</span><br><span class="line"> //true</span><br></pre></td></tr></table></figure></p>
+<h3 id="重要公式"><a href="#重要公式" class="headerlink" title="重要公式"></a>重要公式</h3><p>对象是由构造函数构成所以请看下面公式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var 对象 = new 函数()</span><br><span class="line">对象.__proto__ === 函数.prototype</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -331,8 +362,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/25/脚本/" rel="next" title="脚本">
-                <i class="fa fa-chevron-left"></i> 脚本
+              <a href="/2018/06/15/JS-里的数据类型转换/" rel="next" title="JS 里的数据类型转换">
+                <i class="fa fa-chevron-left"></i> JS 里的数据类型转换
               </a>
             
           </div>
@@ -340,10 +371,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/05/02/HTML/" rel="prev" title="HTML">
-                HTML <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -395,8 +422,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -447,6 +483,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#全局对象-window"><span class="nav-number">1.</span> <span class="nav-text">全局对象 window</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#公共属性"><span class="nav-number">2.</span> <span class="nav-text">公共属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重要公式"><span class="nav-number">3.</span> <span class="nav-text">重要公式</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

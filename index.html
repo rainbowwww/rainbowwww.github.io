@@ -229,6 +229,161 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/18/原型与原型链/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="caihong xu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="rainbowwww">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/06/18/原型与原型链/" itemprop="url">原型与原型链</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-06-18T22:46:03+08:00">
+                2018-06-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="全局对象-window"><a href="#全局对象-window" class="headerlink" title="全局对象 window"></a>全局对象 window</h3><p>ECMAScript 规定全局对象叫做 global，但是浏览器把 window 作为全局对象（浏览器先存在的）</p>
+<p>window 就是一个哈希表，有很多属性。</p>
+<p>window 的属性就是全局变量。</p>
+<p>这些全局变量分为两种：</p>
+<ol>
+<li>一种是 ECMAScript 规定的</li>
+</ol>
+<ul>
+<li>global.parseInt</li>
+<li>global.parseFloat</li>
+<li>global.Number</li>
+<li>global.String</li>
+<li>global.Boolean</li>
+<li>global.Object</li>
+</ul>
+<ol start="2">
+<li>一种是浏览器自己加的属性</li>
+</ol>
+<ul>
+<li>window.alert</li>
+<li>window.prompt</li>
+<li>window.comfirm</li>
+<li>window.console.log</li>
+<li>window.console.dir</li>
+<li>window.document</li>
+<li>window.document.createElement</li>
+<li>window.document.getElementById<br>写代码的时候window可以不写。<br>###简单类型与对象的区别<br>var n1 = 1 与 var n2 = new Number(1);内存不同。基本类型没有属性的，但是有个暂时转换的功能<br><img src="https://i.loli.net/2018/06/18/5b27c52161c8f.png" alt="n1andn2.png"><br>var s1 = x 与 var s2 = new String(‘x’);<br>同上！<br>var o1 = {} 与 var o2 = new Object() ;两者完全没有区别，但不但表两个是相等的地址是不一样的。请看内存图<br><img src="https://i.loli.net/2018/06/18/5b27c522dd1bc.png" alt="o1ando2.png"></li>
+</ul>
+<p>字符串的一些小操作<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var s  = &apos;wawj&apos; ;</span><br><span class="line">s.charAt(0);//获取的是索引所对应的字符；</span><br><span class="line">s.charcodeAt(0);//获取索引所对应字符的Unicode编码；</span><br><span class="line">(100).toString(16)//获取数字为100的16进制数。</span><br><span class="line">&apos;    username      &apos;.trim  去除两边的空格</span><br><span class="line">var s1 = &apos;hello&apos;</span><br><span class="line">var s2 = &apos;world&apos;</span><br><span class="line">s1.contact(s2)  // &apos;helloworld&apos; 得到的第三的字符串，跟命令行中的cat命令有关系</span><br><span class="line">s1.slice(0,2); //&apos;he&apos;  从索引0到2，包前不包后。</span><br><span class="line">s1.replace(e,o); // &apos;hollo&apos;  替换</span><br></pre></td></tr></table></figure></p>
+<h3 id="公共属性"><a href="#公共属性" class="headerlink" title="公共属性"></a>公共属性</h3><p>所有对象都有 toString 和 valueOf 属性，那么我们是否有必要给每个对象一个 toString 和 valueOf 呢？</p>
+<p>明显不需要。</p>
+<p>JS 的做法是把 toString 和 valueOf 放在一个对象里（暂且叫做公用属性组成的对象）</p>
+<p>然后让每一个对象的 <strong>proto</strong> 存储这个「公用属性组成的对象」的地址。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">o1.toString ===o2.toString  //true  toString是公共属性所以有相同的存储地址</span><br></pre></td></tr></table></figure>
+<p>object 的属性是所有对象的共有属性<br>共有属性是个hash如果没有被引用的话被就被要被垃圾回收掉，object.prototype 在引用，prototype是object的共有属性(原型)。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var o1 = &#123;&#125;</span><br><span class="line">o1.__proto__ ===object.prototype</span><br><span class="line"> //true</span><br></pre></td></tr></table></figure></p>
+<h3 id="重要公式"><a href="#重要公式" class="headerlink" title="重要公式"></a>重要公式</h3><p>对象是由构造函数构成所以请看下面公式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var 对象 = new 函数()</span><br><span class="line">对象.__proto__ === 函数.prototype</span><br></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/15/JS-里的数据类型转换/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1654,130 +1809,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/18/简单linux命令的使用/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="caihong xu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="rainbowwww">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/18/简单linux命令的使用/" itemprop="url">简单linux命令的使用</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-18T16:00:24+08:00">
-                2018-04-18
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p> ##linux中ls的简单使用<br>      list的缩写为ls，列表的意思。在命令行输入ls表示展现当前目录有哪些文件(不包括隐藏的文件)。<br>   下面为ls的常用命令<br>      1  ls -a<br>          显示当前位置下的所有文件(包括以.开头的隐藏的文件)<br>      2  ls -l<br>          显示当前位置下的文件详细信息，文件是否有读写执行及文件创建的时间等功能。<br>      3  ls -al<br>          前两者的结合。</p>
-<p> ##linux中cat的简单使用<br>      表示由第一行开始显示档案内容。</p>
-<p> ##linux中mv的简单使用<br>      move的缩写为mv，在linux中表示为重命名的意思。如：mv 1.txt 2.txt 表示1.txt文件被重命名为2.txt</p>
-<p> ##linux中touch的使用<br>      在linux中touch表示为新建文件的意思。如 touch 1.txt 则在当前目录下新建了一个1.txt的文件。</p>
-<p> ##explainshell<br> 此文仅为简单介绍linux中个别常用命令，更多详情请看<a href="https://explainshell.com/explain?cmd=ls+-lrt" target="_blank" rel="noopener">https://explainshell.com/explain?cmd=ls+-lrt</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1828,7 +1859,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
