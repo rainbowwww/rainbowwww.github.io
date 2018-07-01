@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="1.什么是脚本  电脑的剧本。如下所示：  cd ~/Desktop  mkdir demo  cd demo  echo &amp;quot;hi&amp;quot; &amp;gt; index.htmlcd ~/Desktop2.如何创建脚本  *创建一个文件      `mkdir ~/local       cd ~/local       touch demo.txt` *编辑文件     `mkdir de">
+<meta name="description" content="封装一个函数123456789101112131415161718function getSiblings(node)&amp;#123;    var allChildren =  node.parentNode.children;    var array = &amp;#123;length:0&amp;#125;;    for(var i=0; i&amp;lt;allChildren.length;i++)&amp;#123">
 <meta property="og:type" content="article">
-<meta property="og:title" content="脚本">
-<meta property="og:url" content="http://yoursite.com/2018/04/25/脚本/index.html">
+<meta property="og:title" content="jQuery的封装和实现">
+<meta property="og:url" content="http://yoursite.com/2018/07/01/jQuery的封装和实现/index.html">
 <meta property="og:site_name" content="rainbowwww">
-<meta property="og:description" content="1.什么是脚本  电脑的剧本。如下所示：  cd ~/Desktop  mkdir demo  cd demo  echo &amp;quot;hi&amp;quot; &amp;gt; index.htmlcd ~/Desktop2.如何创建脚本  *创建一个文件      `mkdir ~/local       cd ~/local       touch demo.txt` *编辑文件     `mkdir de">
+<meta property="og:description" content="封装一个函数123456789101112131415161718function getSiblings(node)&amp;#123;    var allChildren =  node.parentNode.children;    var array = &amp;#123;length:0&amp;#125;;    for(var i=0; i&amp;lt;allChildren.length;i++)&amp;#123">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-04-25T10:27:29.640Z">
+<meta property="og:updated_time" content="2018-07-01T13:27:27.276Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="脚本">
-<meta name="twitter:description" content="1.什么是脚本  电脑的剧本。如下所示：  cd ~/Desktop  mkdir demo  cd demo  echo &amp;quot;hi&amp;quot; &amp;gt; index.htmlcd ~/Desktop2.如何创建脚本  *创建一个文件      `mkdir ~/local       cd ~/local       touch demo.txt` *编辑文件     `mkdir de">
+<meta name="twitter:title" content="jQuery的封装和实现">
+<meta name="twitter:description" content="封装一个函数123456789101112131415161718function getSiblings(node)&amp;#123;    var allChildren =  node.parentNode.children;    var array = &amp;#123;length:0&amp;#125;;    for(var i=0; i&amp;lt;allChildren.length;i++)&amp;#123">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/04/25/脚本/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/07/01/jQuery的封装和实现/"/>
 
 
 
 
 
-  <title>脚本 | rainbowwww</title>
+  <title>jQuery的封装和实现 | rainbowwww</title>
   
 
 
@@ -232,7 +232,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/25/脚本/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/01/jQuery的封装和实现/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="caihong xu">
@@ -249,7 +249,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">脚本</h1>
+          <h1 class="post-title" itemprop="name headline">jQuery的封装和实现</h1>
         
 
         <div class="post-meta">
@@ -261,8 +261,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-25T18:15:02+08:00">
-                2018-04-25
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-01T21:23:15+08:00">
+                2018-07-01
               </time>
             
 
@@ -299,28 +299,16 @@
       
 
       
-        <p>1.什么是脚本</p>
-<blockquote>
-<p>电脑的剧本。<br>如下所示：</p>
-</blockquote>
-<p><code>cd ~/Desktop
- mkdir demo
- cd demo
- echo &quot;hi&quot; &gt; index.html</code>cd ~/Desktop<br>2.如何创建脚本</p>
-<hr>
-<pre><code>*创建一个文件
-     `mkdir ~/local
-      cd ~/local
-      touch demo.txt`
-*编辑文件
-    `mkdir demo
-     cd demo
-     mkdir css js
-     touch index.html css/style.css js/main.js
-     exit`
-*windows用户执行
-    `sh ~/local/demo.txt`
-</code></pre><p>即可运行此脚本了。</p>
+        <h3 id="封装一个函数"><a href="#封装一个函数" class="headerlink" title="封装一个函数"></a>封装一个函数</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">function getSiblings(node)&#123;</span><br><span class="line">    var allChildren =  node.parentNode.children;</span><br><span class="line">    var array = &#123;length:0&#125;;</span><br><span class="line">    for(var i=0; i&lt;allChildren.length;i++)&#123;</span><br><span class="line">        if(allChildren[i]!==node)&#123;</span><br><span class="line">            array[allChildren.length]=allChildren[i]</span><br><span class="line">            array.length +=1 ;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    return array</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line">function addClass(node,classes)&#123;</span><br><span class="line">     classes.forEach(value =&gt; &#123;</span><br><span class="line">         node.classList.add(value);</span><br><span class="line">     &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上面封装的函数很容易被别的同样名称的变量覆盖，因此需要改进。</p>
+<h3 id="命名空间"><a href="#命名空间" class="headerlink" title="命名空间"></a>命名空间</h3><p>以防被同名称变量覆盖，可以用命名空间来进行调用函数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">window.rainbowww  = &#123;&#125;;</span><br><span class="line">rainbowww.getSiblings = function()&#123;&#125;;</span><br><span class="line">rainbowww.addClass = function()&#123;&#125;;</span><br><span class="line">rainbowww.getSiblings(node);</span><br><span class="line">rainbowww.addClass(node,classes);</span><br></pre></td></tr></table></figure></p>
+<h3 id="能不能把-node-放在前面"><a href="#能不能把-node-放在前面" class="headerlink" title="能不能把 node 放在前面"></a>能不能把 node 放在前面</h3><ul>
+<li><p>方法一<br>直接调用Node的接口,也就是直接在Node的原型链上加函数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Node.prototype.getSiblings = function()&#123;&#125;</span><br><span class="line">Node.prototype.addClass = function()&#123;&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>方法二<br>写一个新的接口 ，以防污染原有的原型链,jQuery的库就是这样写的。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">window.jQuery = function(nodeOrSelect)&#123;</span><br><span class="line">    let nodes =&#123;&#125;</span><br><span class="line">    if(typeof nodeOrSelect===string )&#123;</span><br><span class="line">         let temp = document.querySelectorAll(nodeOrSlect)</span><br><span class="line">         for(let i=0;i&lt;nodeOrSelect.length;i++)&#123;</span><br><span class="line">            nodes[i] = temp[i]</span><br><span class="line">        &#125;&#125;else if(nodeOrSelect instanceof Node)&#123;</span><br><span class="line">            nodes=&#123;0:nodeOrSelect,length:1&#125;&#125;</span><br><span class="line"></span><br><span class="line">    nodes.addClass = function(classes)&#123;</span><br><span class="line">        classes.forEach((value)=&gt;&#123;</span><br><span class="line">            for(let i=0; i&lt;nodes.length;i++)&#123;</span><br><span class="line">                nodes[i].classList.add(value)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">    nodes.setText  = function(text)&#123;</span><br><span class="line">        for(let i=0; i&lt;nodes.length; i++)&#123;</span><br><span class="line">            nodes[i].textContent = text</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return nodes</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
 
       
     </div>
@@ -345,8 +333,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/18/git简单入门/" rel="next" title="git简单入门">
-                <i class="fa fa-chevron-left"></i> git简单入门
+              <a href="/2018/06/18/原型与原型链/" rel="next" title="原型与原型链">
+                <i class="fa fa-chevron-left"></i> 原型与原型链
               </a>
             
           </div>
@@ -354,10 +342,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/04/26/http简介/" rel="prev" title="http简介">
-                http简介 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -409,8 +393,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -461,6 +454,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#封装一个函数"><span class="nav-number">1.</span> <span class="nav-text">封装一个函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#命名空间"><span class="nav-number">2.</span> <span class="nav-text">命名空间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#能不能把-node-放在前面"><span class="nav-number">3.</span> <span class="nav-text">能不能把 node 放在前面</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
