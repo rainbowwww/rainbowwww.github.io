@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="cookie和session," />
 
 
 
@@ -79,17 +79,18 @@
 
 
 
-<meta name="description" content="在gitbash中配置好git后，    1.创建一个目录作为项目目录 mkdir gitstore。    2.进入这个目录 cd gitstore。    3.运行 git init后目录里会多一个.git的仓库。    4.在gitstore中任意添加文件 touch index.html。    5.运行 git status -sb 会发现 index.html前面会有问号。    6.">
+<meta name="description" content="cookie 服务器通过Set-Cookie头给客户端一串字符串。 客户端每次访问相同域名的网页时，必须带上这段字符串。 客户端要在一段时间内保存这个cookie。 cookie一般4k左右。session session是服务器上的哈希占内存。 将SessionID(随机数)通过cookie发给客户端。 服务器有一块内存(哈希表)保存了所有的session。 通过SessionID我们可以得到对">
+<meta name="keywords" content="cookie和session">
 <meta property="og:type" content="article">
-<meta property="og:title" content="git简单入门">
-<meta property="og:url" content="http://yoursite.com/2018/04/18/git简单入门/index.html">
+<meta property="og:title" content="cookie和session">
+<meta property="og:url" content="http://yoursite.com/2018/11/03/cookie和session/index.html">
 <meta property="og:site_name" content="rainbowwww">
-<meta property="og:description" content="在gitbash中配置好git后，    1.创建一个目录作为项目目录 mkdir gitstore。    2.进入这个目录 cd gitstore。    3.运行 git init后目录里会多一个.git的仓库。    4.在gitstore中任意添加文件 touch index.html。    5.运行 git status -sb 会发现 index.html前面会有问号。    6.">
+<meta property="og:description" content="cookie 服务器通过Set-Cookie头给客户端一串字符串。 客户端每次访问相同域名的网页时，必须带上这段字符串。 客户端要在一段时间内保存这个cookie。 cookie一般4k左右。session session是服务器上的哈希占内存。 将SessionID(随机数)通过cookie发给客户端。 服务器有一块内存(哈希表)保存了所有的session。 通过SessionID我们可以得到对">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-04-18T10:52:23.733Z">
+<meta property="og:updated_time" content="2018-11-03T13:56:13.920Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="git简单入门">
-<meta name="twitter:description" content="在gitbash中配置好git后，    1.创建一个目录作为项目目录 mkdir gitstore。    2.进入这个目录 cd gitstore。    3.运行 git init后目录里会多一个.git的仓库。    4.在gitstore中任意添加文件 touch index.html。    5.运行 git status -sb 会发现 index.html前面会有问号。    6.">
+<meta name="twitter:title" content="cookie和session">
+<meta name="twitter:description" content="cookie 服务器通过Set-Cookie头给客户端一串字符串。 客户端每次访问相同域名的网页时，必须带上这段字符串。 客户端要在一段时间内保存这个cookie。 cookie一般4k左右。session session是服务器上的哈希占内存。 将SessionID(随机数)通过cookie发给客户端。 服务器有一块内存(哈希表)保存了所有的session。 通过SessionID我们可以得到对">
 
 
 
@@ -119,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/04/18/git简单入门/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/11/03/cookie和session/"/>
 
 
 
 
 
-  <title>git简单入门 | rainbowwww</title>
+  <title>cookie和session | rainbowwww</title>
   
 
 
@@ -232,7 +233,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/18/git简单入门/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/03/cookie和session/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="caihong xu">
@@ -249,7 +250,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">git简单入门</h1>
+          <h1 class="post-title" itemprop="name headline">cookie和session</h1>
         
 
         <div class="post-meta">
@@ -261,8 +262,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-18T18:01:07+08:00">
-                2018-04-18
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-03T20:59:25+08:00">
+                2018-11-03
               </time>
             
 
@@ -299,18 +300,18 @@
       
 
       
-        <pre><code>在gitbash中配置好git后，
-   1.创建一个目录作为项目目录 mkdir gitstore。
-   2.进入这个目录 cd gitstore。
-   3.运行 git init后目录里会多一个.git的仓库。
-   4.在gitstore中任意添加文件 touch index.html。
-   5.运行 git status -sb 会发现 index.html前面会有问号。
-   6.运行 git add index.html 将该文件放入暂存区
-   7.运行 git commit -m &apos;第一次提交&apos; 后放入本地仓库。
-   8.在github上建一个新仓库如：gitstore(建立完后不要点击其他，直接创建)。
-   9.点击ssh按钮后进行有本地仓库第二项逐条复制运行
-   10.刷新页面本地仓库就已经上传到github仓库了。
-</code></pre>
+        <h3 id="cookie"><a href="#cookie" class="headerlink" title="cookie"></a>cookie</h3><ol>
+<li>服务器通过Set-Cookie头给客户端一串字符串。</li>
+<li>客户端每次访问相同域名的网页时，必须带上这段字符串。</li>
+<li>客户端要在一段时间内保存这个cookie。</li>
+<li>cookie一般4k左右。<h3 id="session"><a href="#session" class="headerlink" title="session"></a>session</h3></li>
+<li>session是服务器上的哈希占内存。</li>
+<li>将SessionID(随机数)通过cookie发给客户端。</li>
+<li>服务器有一块内存(哈希表)保存了所有的session。</li>
+<li>通过SessionID我们可以得到对应用户的隐私和信息。</li>
+<li>这块内存(哈希表)就是服务器上的所有session。</li>
+</ol>
+
       
     </div>
     
@@ -325,6 +326,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/cookie和session/" rel="tag"># cookie和session</a>
+          
+        </div>
+      
 
       
       
@@ -334,8 +341,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/18/简单linux命令的使用/" rel="next" title="简单linux命令的使用">
-                <i class="fa fa-chevron-left"></i> 简单linux命令的使用
+              <a href="/2018/07/01/jQuery的封装和实现/" rel="next" title="jQuery的封装和实现">
+                <i class="fa fa-chevron-left"></i> jQuery的封装和实现
               </a>
             
           </div>
@@ -343,10 +350,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/04/25/脚本/" rel="prev" title="脚本">
-                脚本 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -398,8 +401,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -450,6 +462,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#cookie"><span class="nav-number">1.</span> <span class="nav-text">cookie</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#session"><span class="nav-number">2.</span> <span class="nav-text">session</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
