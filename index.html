@@ -229,6 +229,278 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/29/编码背后/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="caihong xu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="rainbowwww">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/29/编码背后/" itemprop="url">编码背后</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-29T20:21:59+08:00">
+                2018-11-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="读《编码》总结一"><a href="#读《编码》总结一" class="headerlink" title="读《编码》总结一"></a>读《编码》总结一</h3><p>因读了该书的三分之一，越往后读，越记不住前面的知识点，前后知识点关联脱节，于是就诞生这篇总结博客。</p>
+<h4 id="与门"><a href="#与门" class="headerlink" title="与门"></a>与门</h4><p>只有当两个继电器都被触发的时候灯泡才会亮。这样两个继电器的串联被称为一个”与门”</p>
+<p><img src="https://i.loli.net/2018/11/29/5bff859660719.jpg" alt="anddoor.jpg"></p>
+<p>电器工程师用如下专门的符号表示一个与门</p>
+<p><img src="https://i.loli.net/2018/11/29/5bff874ddf7c8.jpg" alt="anddoorsymbol.jpg"></p>
+<p>如果我们将开关闭合为1，开启为1，那么与门的输入与输出之间的关系可以用该表格表示：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">And</th>
+<th style="text-align:center">0</th>
+<th style="text-align:center">1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+</tr>
+</tbody>
+</table>
+<h4 id="或门"><a href="#或门" class="headerlink" title="或门"></a>或门</h4><p>并联电路，两个继电器的输出是接在一起的，这个连在一起的输出为灯泡提供了电源。任何一个继电器都能点亮灯泡。当上面的开关或下面的开关闭合，灯泡都会发光，这里的关键词是或，因此这样的门被称为“或门”</p>
+<p><img src="https://i.loli.net/2018/11/29/5bff8a5e02266.jpg" alt="ordoor.jpg"></p>
+<p>电器工程师用如下专门的符号表示一个或门</p>
+<p><img src="https://i.loli.net/2018/11/29/5bff8cb9cde71.jpg" alt="ordoorsymbol.jpg"></p>
+<p>如果我们将开关闭合为1，开启为1，那么或门的输入与输出之间的关系可以用该表格表示：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">or</th>
+<th style="text-align:center">0</th>
+<th style="text-align:center">1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+</tr>
+</tbody>
+</table>
+<h4 id="反向器"><a href="#反向器" class="headerlink" title="反向器"></a>反向器</h4><p>开关断开时，灯泡被点亮。开关闭合时，灯泡就会熄灭。以这种方式连接的继电器叫反向器。反向器不是逻辑门（一个逻辑门通常有两个或多个输入）如下符号表示反向器:</p>
+<p><img src="https://i.loli.net/2018/11/29/5bff909d26924.jpg" alt="inverter.jpg"></p>
+<h4 id="或非门"><a href="#或非门" class="headerlink" title="或非门"></a>或非门</h4><p><img src="https://i.loli.net/2018/11/29/5bff92703713d.jpg" alt="NOR.jpg"></p>
+<p>如上图所示上面的开关闭合，灯泡就会熄灭。下面的开关闭合，灯泡也会熄灭。如果两个开关全部闭合，灯泡也不亮。只有当两个开关断开才会亮。</p>
+<p>这些结果恰恰与或门相反，这个门称为”或非门”，用以下符号表示：</p>
+<p><img src="https://i.loli.net/2018/11/29/5bff983ee41b6.jpg" alt="ordoorsymbol.jpg"></p>
+<p>或非门的输出如下：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">NOR</th>
+<th style="text-align:center">0</th>
+<th style="text-align:center">1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+</tr>
+</tbody>
+</table>
+<h4 id="与非门"><a href="#与非门" class="headerlink" title="与非门"></a>与非门</h4><p><img src="https://i.loli.net/2018/11/29/5bff9a79ea6c2.jpg" alt="NAND.jpg"></p>
+<p>如上图所示，两个开关断开，灯泡是亮的。上面开关闭合，灯泡是亮的。下面的开关闭合，灯泡也是亮的。只有当两个开关都闭合灯泡才会熄灭。</p>
+<p>这一结果和与门恰恰相反，这种逻辑门被称为与非门或简称NAND。用以下符号表示：</p>
+<p><img src="https://i.loli.net/2018/11/29/5bff9c86894c9.jpg" alt="NANDsymbol.jpg"></p>
+<p>与非门的输出如下：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">NAND</th>
+<th style="text-align:center">0</th>
+<th style="text-align:center">1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+</tr>
+</tbody>
+</table>
+<h3 id="异或门"><a href="#异或门" class="headerlink" title="异或门"></a>异或门</h3><p><img src="https://i.loli.net/2018/11/29/5bffa770348ce.jpg" alt="xor.jpg"></p>
+<p>为了实现二进制的加法位，设计了如上图所示电路。该电路叫异或门，简写XOR。</p>
+<p>最后得到的输出结果为</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">输入A</th>
+<th style="text-align:center">输入B</th>
+<th style="text-align:center">或门输出</th>
+<th style="text-align:center">与非门输出</th>
+<th style="text-align:center">与门输出</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+</tr>
+<tr>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+</tr>
+</tbody>
+</table>
+<p>用特定的电器符号表示</p>
+<p><img src="https://i.loli.net/2018/11/29/5bffa8f7d67cf.jpg" alt="XORSYMBOL.jpg"></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/03/cookie和session/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1670,133 +1942,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/26/http简介/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="caihong xu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="rainbowwww">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/26/http简介/" itemprop="url">http简介</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-26T12:58:55+08:00">
-                2018-04-26
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>###什么是HTTP？<br>         全称为：超文本传输协议(Hyper Text Transfer Protocol)<br>         两个电脑之间传输内容的协议,HTTP 的作用就是指导浏览器和服务器如何进行沟通。</p>
-<p>###什么是curl？<br>         &gt;transfer a url</p>
-<p>###HTTP的get请求示例：<br>        1.用curl来示例：<br>         <em>用curl在gitbash上来创造一个请求：<br>          <code>curl -s -v -- https://www.baidu.com</code>
-         </em>得到请求结果如下：<br>          <code>&gt; GET / HTTP/1.1  //动词 路径 协议/版本</code><br>          <code>&gt; Host: www.baidu.com  // Key1: value1</code><br>          <code>&gt; User-Agent: curl/7.55.0  // Key2: value1</code><br>          <code>&gt; Accept: */*  // Key3: value1</code><br>          <code>&gt;  //换行</code><br>         <em>得到的响应如下：<br>            <code>&lt; Accept-Ranges: bytes</code><br>            <code>&lt; Cache-Control: private, no-cache, no-store, proxy-revalidate, no-transform</code><br>            <code>&lt; Connection: Keep-Alive</code><br>            <code>&lt; Content-Length: 2443</code><br>            <code>&lt; Content-Type: text/html</code><br>            <code>&lt; Date: Thu, 26 Apr 2018 08:00:23 GMT</code><br>            <code>&lt; Etag: &quot;588603e2-98b&quot;</code><br>            <code>&lt; Last-Modified: Mon, 23 Jan 2017 13:23:46 GMT</code><br>            <code>&lt; Pragma: no-cache</code><br>            <code>&lt; Server: bfe/1.0.8.18</code><br>            <code>&lt; Set-Cookie: BDORZ=27315; max-age=86400; domain=.baidu.com; path=/</code><br>            <code>&lt;</code><br>        2.用 Chrome 查看请求
-         </em>F12打开 Network<br>         <em>输入<a href="https://www.baidu.com" target="_blank" rel="noopener">https://www.baidu.com</a>
-         </em>在 Network 点击，查看 request，点击「view source」<br>         <em>可以看到请求如下：<br>            <code>GET / HTTP/1.1</code><br>            <code>Host: www.baidu.com</code><br>            <code>Connection: keep-alive</code><br>            <code>Cache-Control: max-age=0</code><br>            <code>Upgrade-Insecure-Requests: 1</code><br>            <code>略……</code><br>            <code></code>
-         </em>可以看到响应如下：<br>            <code>HTTP/1.1 200 OK</code><br>            <code>Bdpagetype: 2</code><br>            <code>Bdqid: 0x9fcf424f0002e78a</code><br>            <code>Cache-Control: private</code><br>            <code>Connection: Keep-Alive</code><br>            <code>Content-Encoding: gzip</code><br>            <code></code><br>            <code>略……</code><br>      <strong>总结get请求</strong><br>           由三个部分组成：<br>           <code>1 动词 路径 协议/版本</code><br>           <code>2 Key1: value1</code><br>           <code>2 Key2: value2</code><br>           <code>2 Key3: value3</code><br>           <code>3</code><br>        &gt;post 请求会多一个部分为要上传的数据。<br>      <strong>总结get响应</strong><br>           <code>1 协议/版本号 状态码 状态解释</code><br>           <code>2 Key1: value1</code><br>           <code>2 Key2: value2</code><br>           <code>2 Content-Length: 17931</code><br>           <code>2 Content-Type: text/html</code><br>           <code>3</code><br>        &gt;post 响应会多一个部分为要 要下载的内容</p>
-<hr>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1847,7 +1992,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
