@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="&amp;lt;a&amp;gt;标签和&amp;lt;iframe&amp;gt;标签 &amp;lt;kbd&amp;gt;&amp;lt;a&amp;gt; &amp;lt;/kbd&amp;gt; ：链接或者同一页面的锚点 ** 链接 **      示例如下：      12&amp;lt;a href=&amp;quot;http://qq.com&amp;quot;&amp;gt;QQ&amp;lt;/a&amp;gt;      效果如下：     ![1.png](https://i.loli.net/2">
+<meta name="description" content="正则的使用处理字符串的常用方法在说正则之前先说一下字符串的常用方法：  search() 字符串的查询 123var str = &amp;apos;abcdefg&amp;apos;str.search(&amp;apos;a&amp;apos;)  //结果为0str.search(&amp;apos;h&amp;apos;)  //结果-1 如果有则返回所在位置，如果没有则返回-1  subsrting() 字符串的截取，有两个参数 ，开">
 <meta property="og:type" content="article">
-<meta property="og:title" content="个别标签详解">
-<meta property="og:url" content="http://yoursite.com/2018/05/07/个别标签详解/index.html">
+<meta property="og:title" content="正则的使用">
+<meta property="og:url" content="http://yoursite.com/2019/04/07/正则的使用/index.html">
 <meta property="og:site_name" content="rainbowwww">
-<meta property="og:description" content="&amp;lt;a&amp;gt;标签和&amp;lt;iframe&amp;gt;标签 &amp;lt;kbd&amp;gt;&amp;lt;a&amp;gt; &amp;lt;/kbd&amp;gt; ：链接或者同一页面的锚点 ** 链接 **      示例如下：      12&amp;lt;a href=&amp;quot;http://qq.com&amp;quot;&amp;gt;QQ&amp;lt;/a&amp;gt;      效果如下：     ![1.png](https://i.loli.net/2">
+<meta property="og:description" content="正则的使用处理字符串的常用方法在说正则之前先说一下字符串的常用方法：  search() 字符串的查询 123var str = &amp;apos;abcdefg&amp;apos;str.search(&amp;apos;a&amp;apos;)  //结果为0str.search(&amp;apos;h&amp;apos;)  //结果-1 如果有则返回所在位置，如果没有则返回-1  subsrting() 字符串的截取，有两个参数 ，开">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-05-07T15:30:50.520Z">
+<meta property="og:updated_time" content="2019-04-07T13:38:34.178Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="个别标签详解">
-<meta name="twitter:description" content="&amp;lt;a&amp;gt;标签和&amp;lt;iframe&amp;gt;标签 &amp;lt;kbd&amp;gt;&amp;lt;a&amp;gt; &amp;lt;/kbd&amp;gt; ：链接或者同一页面的锚点 ** 链接 **      示例如下：      12&amp;lt;a href=&amp;quot;http://qq.com&amp;quot;&amp;gt;QQ&amp;lt;/a&amp;gt;      效果如下：     ![1.png](https://i.loli.net/2">
+<meta name="twitter:title" content="正则的使用">
+<meta name="twitter:description" content="正则的使用处理字符串的常用方法在说正则之前先说一下字符串的常用方法：  search() 字符串的查询 123var str = &amp;apos;abcdefg&amp;apos;str.search(&amp;apos;a&amp;apos;)  //结果为0str.search(&amp;apos;h&amp;apos;)  //结果-1 如果有则返回所在位置，如果没有则返回-1  subsrting() 字符串的截取，有两个参数 ，开">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/05/07/个别标签详解/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/04/07/正则的使用/"/>
 
 
 
 
 
-  <title>个别标签详解 | rainbowwww</title>
+  <title>正则的使用 | rainbowwww</title>
   
 
 
@@ -232,7 +232,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/07/个别标签详解/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/07/正则的使用/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="caihong xu">
@@ -249,7 +249,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">个别标签详解</h1>
+          <h1 class="post-title" itemprop="name headline">正则的使用</h1>
         
 
         <div class="post-meta">
@@ -261,8 +261,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-07T23:09:19+08:00">
-                2018-05-07
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-07T21:33:55+08:00">
+                2019-04-07
               </time>
             
 
@@ -299,77 +299,83 @@
       
 
       
-        <h3 id="lt-a-gt-标签和-lt-iframe-gt-标签"><a href="#lt-a-gt-标签和-lt-iframe-gt-标签" class="headerlink" title="&lt;a&gt;标签和&lt;iframe&gt;标签"></a><code>&lt;a&gt;</code>标签和<code>&lt;iframe&gt;</code>标签</h3><pre><code> &lt;kbd&gt;&lt;a&gt; &lt;/kbd&gt; ：链接或者同一页面的锚点
-** 链接 **
-     示例如下：
-     <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;a href=&quot;http://qq.com&quot;&gt;QQ&lt;/a&gt;</span><br></pre></td></tr></table></figure>
+        <h3 id="正则的使用"><a href="#正则的使用" class="headerlink" title="正则的使用"></a>正则的使用</h3><h6 id="处理字符串的常用方法"><a href="#处理字符串的常用方法" class="headerlink" title="处理字符串的常用方法"></a>处理字符串的常用方法</h6><p>在说正则之前先说一下字符串的常用方法：</p>
+<ol>
+<li><p>search()</p>
+<p>字符串的查询</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var str = &apos;abcdefg&apos;</span><br><span class="line">str.search(&apos;a&apos;)  //结果为0</span><br><span class="line">str.search(&apos;h&apos;)  //结果-1</span><br></pre></td></tr></table></figure>
+<p>如果有则返回所在位置，如果没有则返回-1</p>
+</li>
+<li><p>subsrting()</p>
+<p>字符串的截取，有两个参数 ，开始位置和结束位置，包左不包右，也可以只给开始位置。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var str = &apos;abcdefg&apos;</span><br><span class="line">str.substring(0,2)  //结果为&quot;ab&quot;</span><br><span class="line">str.substring(1)   //结果为&quot;bcdefg&quot; 从第一位开始的到后面所有的值。</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>charAt()</p>
+<p>返回指定位置的字符</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var str = &apos;abcdefg&apos;</span><br><span class="line">str.charAt(0) //结果为&quot;a&quot;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>split()</p>
+<p>用于把一个字符串分割成字符串数组。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var str = &apos;ab-c-de-fg&apos;</span><br><span class="line">str.split(&apos;-&apos;)//结果为 [&quot;ab&quot;, &quot;c&quot;, &quot;de&quot;, &quot;fg&quot;]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>join()</p>
+<p>可以把数组变成字符串</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var str = [&quot;ab&quot;, &quot;c&quot;, &quot;de&quot;, &quot;fg&quot;]</span><br><span class="line">str.join(&apos;-&apos;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>match()</p>
+<p>可在字符串内检索指定的值，或找到一个或多个正则表达式的匹配。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var str = &apos;abcdefg&apos;</span><br><span class="line">str.match(&apos;b&apos;)  //结果为数组，里面包含该索引值</span><br><span class="line">str.match(/b/)  //同上</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>还有很多，但当我们遇到需要进行匹配很多字符串的时候，这些方法就很鸡肋。所以我们需要正则</p>
+<h6 id="正则的使用-1"><a href="#正则的使用-1" class="headerlink" title="正则的使用"></a>正则的使用</h6><p>下面就说说正则的基础使用</p>
+<ol>
+<li>正则的两种风格<ul>
+<li>new RegExp(‘a’)   //这样则表示a本身 不经常使用</li>
+<li>/a/  //使用频繁</li>
+</ul>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var re = new RegExp(&apos;a&apos;)</span><br><span class="line">var str  = &apos;abcdef&apos;</span><br><span class="line">str.search(re)  //结果为0</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li><p>参数</p>
+<ul>
+<li><p>i  忽略大小写</p>
+</li>
+<li><p>g 全局匹配</p>
+</li>
+</ul>
+</li>
+</ol>
+<ol start="3">
+<li><p>转义</p>
+<ul>
+<li><p>\d     数字</p>
+</li>
+<li><p>\w     英文 数字  下划线</p>
+</li>
+<li><p>\s      空白字符 包括空格 Tab 等</p>
+</li>
+<li><p>\D     除了字符串以外的数字</p>
+</li>
+<li><p>\W     除了英文数字下划线以外的东西</p>
+</li>
+<li><p>\S       除了空格和Tab以外的</p>
+</li>
+</ul>
+</li>
+</ol>
+<ol start="4">
+<li>量词<ul>
+<li>{n} 正好出现n次</li>
+<li>{n,m}最少n次 最多m次</li>
+<li>+是等价于{1, }最少有一次</li>
+<li>？等价于{0,1}最少0次最多一次</li>
+<li>*等价于{0，} 可有可无的意思</li>
+</ul>
+</li>
+</ol>
 
-    效果如下：
-    ![1.png](https://i.loli.net/2018/05/07/5af04c2f64464.png)
-
-    点击蓝色的QQ时就会跳转到qq页面。
-    若&lt;kbd&gt;&lt;a&gt;&lt;/kbd&gt;标签的href属性在不写http协议时` &lt;a href=&apos;//qq.com&apos;&gt; `
-    则当前页面默认的是什么协议它就是什么协议。file协议是不建议使用的。
-    建议以后打开页面以http的形式打开避免不必要的麻烦。
-** 锚点 **
-    示例如下：
-    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;p id=&quot;xxx&quot;&gt;666&lt;/p&gt;</span><br><span class="line">&lt;p&gt;666&lt;/p&gt;</span><br><span class="line">&lt;p&gt;666&lt;/p&gt;</span><br><span class="line">&lt;p&gt;666&lt;/p&gt;</span><br><span class="line">&lt;p&gt;666&lt;/p&gt;</span><br><span class="line">&lt;p&gt;666&lt;/p&gt;</span><br><span class="line">&lt;p&gt;666&lt;/p&gt;</span><br><span class="line">&lt;p&gt;666&lt;/p&gt;</span><br><span class="line">&lt;p&gt;666&lt;/p&gt;</span><br><span class="line">&lt;p&gt;666&lt;/p&gt;</span><br><span class="line">&lt;p&gt;666&lt;/p&gt;</span><br><span class="line">&lt;p&gt;666&lt;/p&gt;</span><br><span class="line">&lt;p&gt;666&lt;/p&gt;</span><br><span class="line">&lt;p&gt;666&lt;/p&gt;</span><br><span class="line">&lt;p&gt;666&lt;/p&gt;</span><br><span class="line">&lt;p&gt;666&lt;/p&gt;</span><br><span class="line">&lt;p&gt;666&lt;/p&gt;</span><br><span class="line">&lt;p&gt;666&lt;/p&gt;</span><br><span class="line">&lt;p&gt;666&lt;/p&gt;</span><br><span class="line">&lt;p&gt;666&lt;/p&gt;</span><br><span class="line">&lt;p&gt;666&lt;/p&gt;</span><br><span class="line">&lt;a href=&quot;#xxx&quot; &gt;回到顶部&lt;/a&gt;</span><br></pre></td></tr></table></figure>
-
-    当在页面上点击`回到顶部`时，就会找到`id=&apos;xxx&apos;`对应的`&lt;p&gt;`标签，
-    并在网址栏后面出现`href`值
-
-**`&lt;a&gt;`标签下载属性**
-    示例如下：
-
-     <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href=&quot;http://qq.com&quot; download&gt;下载QQ&lt;/a&gt;</span><br></pre></td></tr></table></figure>
-
-    具体得看浏览器是否支持。
-
-    ** ` &lt;a&gt; `标签其他的属性 **
-    如：
-
-    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href=&quot;http://xxx.com&quot; target=_blank&gt;</span><br></pre></td></tr></table></figure>
-
-    target的值有` _blank _self _parent _top `
-     * _blank: 点击链接打开一个新页面。
-     * _self : 点击链接会在原来的页面上实现跳转。
-     * _parent: 点击链接会在父级页面打开。
-     * _top: 点击链接会在祖先级页面打开。
-    ` _parent `和` _top `两个属性值和` &lt;iframe&gt; `标签结合才能看到明显的效果。
-
-` &lt;iframe&gt; `:实现网页的嵌套
-     ** 单独使用 **
-     示例如下：
-    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;iframe src=&quot;http://qq.com&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;</span><br></pre></td></tr></table></figure>
-
-    效果如下：
-
-    ![1.png](https://i.loli.net/2018/05/07/5af04c2f64464.png)
-
- ** ` &lt;iframe&gt; `和` &lt;a&gt; `一起使用 **
- 第一种：
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;iframe name=&quot;xxx&quot; src=&quot;#&quot; &gt;&lt;/iframe&gt;</span><br><span class="line">&lt;a href=&quot;http://qq.com&quot; target=&quot;xxx&quot;&gt;QQ&lt;/a&gt;</span><br></pre></td></tr></table></figure>
-
- 效果如下：
-
- ![1.png](https://i.loli.net/2018/05/07/5af04c2f64464.png)
-
- 当点击`QQ`时页面会在` name=&apos;xxx&apos; `的` iframe `中打开
-
- 第二种：
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;iframe src=&quot;./index2&quot; &gt;&lt;/iframe&gt;</span><br></pre></td></tr></table></figure>
-
- 在index2页面中写` &lt;a&gt; `标签链接，在没设置` target `属性时或属性值为&apos; _self &apos;时
- 点击链接时会在` &lt;iframe&gt; `中打开。如果设置的属性值为&apos; _parent &apos;时则在当前的页面
- 打开。若嵌套了多层` &lt;iframe&gt; `则在最开始的页面打开。(以上根据我的实验具体看浏览器)。
-</code></pre><h3 id="form-标签"><a href="#form-标签" class="headerlink" title="form 标签"></a><code>form</code> 标签</h3><pre><code>` &lt;form&gt; `：一般用来提交数据。` &lt;a&gt; `标签用来发起get请求，` &lt;iframe&gt; `标签一般
-用来发起post请求
- 示例如下：
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;form action=&quot;index2.html&quot; method=&quot;POST&quot;&gt;</span><br><span class="line">        &lt;input type=&quot;text&quot; name=&quot;username&quot;&gt;;</span><br><span class="line">        &lt;input type=&quot;password&quot; name=&quot;password&quot;&gt;;</span><br><span class="line">        &lt;input type=&quot;submit&quot; value=&quot;提交&quot;&gt;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure>
-
-点击` 提交 `按钮时页面会把数据提交到为index2.html中，可以在开发者工具中
-查看到请求类型为post,也可以get请求，不过一般不会这样做。
-</code></pre>
       
     </div>
     
@@ -393,8 +399,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/05/05/HTML标签简单介绍/" rel="next" title="HTML标签简单介绍">
-                <i class="fa fa-chevron-left"></i> HTML标签简单介绍
+              <a href="/2018/12/12/test/" rel="next" title="">
+                <i class="fa fa-chevron-left"></i> 
               </a>
             
           </div>
@@ -402,10 +408,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/05/23/网页布局/" rel="prev" title="网页布局">
-                网页布局 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -528,7 +530,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#lt-a-gt-标签和-lt-iframe-gt-标签"><span class="nav-number">1.</span> <span class="nav-text">&lt;a&gt;标签和&lt;iframe&gt;标签</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#form-标签"><span class="nav-number">2.</span> <span class="nav-text">form 标签</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#正则的使用"><span class="nav-number">1.</span> <span class="nav-text">正则的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#处理字符串的常用方法"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">处理字符串的常用方法</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#正则的使用-1"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">正则的使用</span></a></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>

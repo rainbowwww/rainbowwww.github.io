@@ -229,6 +229,329 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/07/正则的使用/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="caihong xu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="rainbowwww">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/04/07/正则的使用/" itemprop="url">正则的使用</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-07T21:33:55+08:00">
+                2019-04-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="正则的使用"><a href="#正则的使用" class="headerlink" title="正则的使用"></a>正则的使用</h3><h6 id="处理字符串的常用方法"><a href="#处理字符串的常用方法" class="headerlink" title="处理字符串的常用方法"></a>处理字符串的常用方法</h6><p>在说正则之前先说一下字符串的常用方法：</p>
+<ol>
+<li><p>search()</p>
+<p>字符串的查询</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var str = &apos;abcdefg&apos;</span><br><span class="line">str.search(&apos;a&apos;)  //结果为0</span><br><span class="line">str.search(&apos;h&apos;)  //结果-1</span><br></pre></td></tr></table></figure>
+<p>如果有则返回所在位置，如果没有则返回-1</p>
+</li>
+<li><p>subsrting()</p>
+<p>字符串的截取，有两个参数 ，开始位置和结束位置，包左不包右，也可以只给开始位置。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var str = &apos;abcdefg&apos;</span><br><span class="line">str.substring(0,2)  //结果为&quot;ab&quot;</span><br><span class="line">str.substring(1)   //结果为&quot;bcdefg&quot; 从第一位开始的到后面所有的值。</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>charAt()</p>
+<p>返回指定位置的字符</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var str = &apos;abcdefg&apos;</span><br><span class="line">str.charAt(0) //结果为&quot;a&quot;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>split()</p>
+<p>用于把一个字符串分割成字符串数组。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var str = &apos;ab-c-de-fg&apos;</span><br><span class="line">str.split(&apos;-&apos;)//结果为 [&quot;ab&quot;, &quot;c&quot;, &quot;de&quot;, &quot;fg&quot;]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>join()</p>
+<p>可以把数组变成字符串</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var str = [&quot;ab&quot;, &quot;c&quot;, &quot;de&quot;, &quot;fg&quot;]</span><br><span class="line">str.join(&apos;-&apos;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>match()</p>
+<p>可在字符串内检索指定的值，或找到一个或多个正则表达式的匹配。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var str = &apos;abcdefg&apos;</span><br><span class="line">str.match(&apos;b&apos;)  //结果为数组，里面包含该索引值</span><br><span class="line">str.match(/b/)  //同上</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>还有很多，但当我们遇到需要进行匹配很多字符串的时候，这些方法就很鸡肋。所以我们需要正则</p>
+<h6 id="正则的使用-1"><a href="#正则的使用-1" class="headerlink" title="正则的使用"></a>正则的使用</h6><p>下面就说说正则的基础使用</p>
+<ol>
+<li>正则的两种风格<ul>
+<li>new RegExp(‘a’)   //这样则表示a本身 不经常使用</li>
+<li>/a/  //使用频繁</li>
+</ul>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var re = new RegExp(&apos;a&apos;)</span><br><span class="line">var str  = &apos;abcdef&apos;</span><br><span class="line">str.search(re)  //结果为0</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li><p>参数</p>
+<ul>
+<li><p>i  忽略大小写</p>
+</li>
+<li><p>g 全局匹配</p>
+</li>
+</ul>
+</li>
+</ol>
+<ol start="3">
+<li><p>转义</p>
+<ul>
+<li><p>\d     数字</p>
+</li>
+<li><p>\w     英文 数字  下划线</p>
+</li>
+<li><p>\s      空白字符 包括空格 Tab 等</p>
+</li>
+<li><p>\D     除了字符串以外的数字</p>
+</li>
+<li><p>\W     除了英文数字下划线以外的东西</p>
+</li>
+<li><p>\S       除了空格和Tab以外的</p>
+</li>
+</ul>
+</li>
+</ol>
+<ol start="4">
+<li>量词<ul>
+<li>{n} 正好出现n次</li>
+<li>{n,m}最少n次 最多m次</li>
+<li>+是等价于{1, }最少有一次</li>
+<li>？等价于{0,1}最少0次最多一次</li>
+<li>*等价于{0，} 可有可无的意思</li>
+</ul>
+</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/12/test/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="caihong xu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="rainbowwww">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/12/12/test/" itemprop="url">Untitled</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-12T21:46:18+08:00">
+                2018-12-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+</body>
+</html>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/29/编码背后/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1610,338 +1933,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/05/HTML标签简单介绍/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="caihong xu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="rainbowwww">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/05/HTML标签简单介绍/" itemprop="url">HTML标签简单介绍</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-05T21:32:13+08:00">
-                2018-05-05
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>HTML是一种标签语言，使之能够正确的传达语义信息，简单介绍几个常用的标签信息：</p>
-<pre><code>* 常用没有语义的标签
-
-    1. div
-         一般用来对其他元素进行分组，也可以在找不到合适语义化标签时使用&lt;code&gt;div&lt;/code&gt;，但我们并不推荐使用。
-
-                示例如下：
-
-      <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;header&quot;&gt;标题栏&lt;/div&gt;</span><br></pre></td></tr></table></figure>
-
-    2. span
-
-                和&lt;code&gt;div&lt;/code&gt;元素相似，但&lt;code&gt;div&lt;/code&gt;是块级元素而&lt;code&gt;&lt;span&gt;&lt;/code&gt;是行内元素。一般用来达到某种样式。
-
-                示例如下：
-
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;p&gt;生命&lt;span&gt;不息&lt;/span&gt;，奋斗不止&lt;/p&gt;</span><br></pre></td></tr></table></figure>
-
-* 常用语义化标签
-
-    1. a
-
-        链接或者同一页的某个锚点。
-
-        示例如下：
-
-    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href=&apos;#&apos;&gt;页面&lt;/a&gt;</span><br></pre></td></tr></table></figure>
-
-    2. p
-
-       表示一个段落。
-
-       示例如下：
-
-    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;p&gt;生命不息，奋斗不止&lt;/p&gt;</span><br></pre></td></tr></table></figure>
-
-    3. ul
-
-        表示无序列表，要和&lt;code&gt;&lt;li&gt;&lt;/code&gt;搭配使用
-
-     <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">      &lt;ul&gt;</span><br><span class="line">           &lt;li&gt;苹果&lt;/li&gt;</span><br><span class="line">           &lt;li&gt;香蕉&lt;/li&gt;</span><br><span class="line">           &lt;li&gt;橘子&lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;</span><br></pre></td></tr></table></figure>
-
-    4.  br
-
-             表示换行
-
-    5.  hr
-
-            表示两部分之间用一根水平直线分割。
-
-    6.  h1,h2,h3,h4,h5,h6
-
-             表示内容的标题，各代表一级标题，二级标题，以此类推……
-
-    7.table
-
-            表格 与&lt;thead&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;/tbody&gt;&lt;tfoot&gt;&lt;/tfoot&gt;&lt;tr&gt;&lt;/tr&gt;&lt;td&gt;&lt;/td&gt;等一起使用。
-
-                示例如下：
-
-    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&lt;table&gt;</span><br><span class="line"></span><br><span class="line">&lt;thead&gt;</span><br><span class="line"></span><br><span class="line">    &lt;tr&gt;</span><br><span class="line">    &lt;th&gt;姓名&lt;/th&gt;</span><br><span class="line"></span><br><span class="line">    &lt;th&gt;性别&lt;/th&gt;</span><br><span class="line"></span><br><span class="line">    &lt;/tr&gt;</span><br><span class="line"></span><br><span class="line">&lt;/thead&gt;</span><br><span class="line"></span><br><span class="line">&lt;tbody&gt;</span><br><span class="line"></span><br><span class="line">    &lt;tr&gt;</span><br><span class="line">    &lt;td&gt;张三&lt;/td&gt;</span><br><span class="line"></span><br><span class="line">    &lt;td&gt;男&lt;/td&gt;</span><br><span class="line"></span><br><span class="line">    &lt;/tr&gt;</span><br><span class="line"></span><br><span class="line">&lt;/tbody&gt;</span><br><span class="line"></span><br><span class="line">&lt;/table&gt;</span><br></pre></td></tr></table></figure>
-</code></pre><p>等等……初级常用标签先介绍到这里</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/02/HTML/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="caihong xu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="rainbowwww">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/02/HTML/" itemprop="url">HTML</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-02T21:59:34+08:00">
-                2018-05-02
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="什么是HTML？"><a href="#什么是HTML？" class="headerlink" title="什么是HTML？"></a>什么是HTML？</h3><pre><code>&gt;HTML（HyperText Markup Language，超文本标记语言） 是用来定义网页结构的一种描述语言。----MDN
-</code></pre><h2 id="HTML发展史"><a href="#HTML发展史" class="headerlink" title="#HTML发展史"></a>#HTML发展史</h2><pre><code>* 1990年 Tim Berners-Lee 提出了超文本的概念。
-* 1993年 IETF于正式开始制定 HTML规范。
-* 1995年 发布了HTML2.0 版本。
-* 1994年 Berners-Lee为了Web 发展而成立了 W3C。
-* 1997年 w3c发布了HTML3.2推荐标准。
-* 2000年 HTML4.0成为ISO标准。
-* 2014年 W3C和WHATWG发布了HTML5标准的最终版。
-</code></pre><h3 id="HTML有哪些标签？"><a href="#HTML有哪些标签？" class="headerlink" title="HTML有哪些标签？"></a>HTML有哪些标签？</h3><pre><code>| Element|Description |
-|:------:|:----------:|
-|&lt;html&gt;  | 代表 HTML 或 XHTML 文档的根。其他所有元素必须是这个元素的子节点。|
-|&lt;head&gt;  |代表关于文档元数据的一个集合，包括脚本或样式表的链接或内容。|
-|&lt;title&gt; |定义文档的标题，将显示在浏览器的标题栏或标签页上。该元素只能包含文本，包含的标签不会被解释。|
-|&lt;base&gt;  |定义页面上相对 URL 的基准 URL。|
-|&lt;link&gt;  |用于链接外部的 CSS 到该文档。|
-|&lt;meta&gt;  |定义其他 HTML 元素无法描述的元数据。|
-|&lt;style&gt; |用于内联 CSS。|
-|&lt;script&gt;|定义一个内联脚本或链接到外部脚本。脚本语言是 JavaScript。|
-|&lt;noscript&gt;|定义当浏览器不支持脚本时显示的替代文字。|
-|&lt;body&gt;|代表 HTML 文档的内容。在文档中只能有一个 &lt;body&gt; 元素。|
-|&lt;section&gt;|定义文档中的一个章节。|
-|&lt;nav&gt;|定义只包含导航链接的章节。|
-|&lt;h1&gt;,&lt;h2&gt;,&lt;h3&gt;,&lt;h4&gt;,&lt;h5&gt;,&lt;h6&gt;|    标题元素实现了六层文档标题，&lt;h1&gt; 是最大的标题，&lt;h6&gt; 是最小的标题。标题元素简要地描述章节的主题。|
-|&lt;header&gt;|定义页面或章节的头部。它经常包含 logo、页面标题和导航性的目录。|
-|&lt;footer&gt;|定义页面或章节的尾部。它经常包含版权信息、法律信息链接和反馈建议用的地址。|
-|&lt;main&gt;|定义文档中主要或重要的内容。|
-|……|……|
-</code></pre><h3 id="HTML标签长什么样子？"><a href="#HTML标签长什么样子？" class="headerlink" title="HTML标签长什么样子？"></a>HTML标签长什么样子？</h3><pre><code> 1. HTML中每个元素都用一对开始和结束标签包裹。例如：
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;&lt;/html&gt;</span><br><span class="line">&lt;div&gt;&lt;/div&gt;</span><br><span class="line">&lt;p&gt;&lt;/p&gt;</span><br></pre></td></tr></table></figure>
-
- 2. 也有一部分标签中不需要包含文本，这些标签称为空标签。例如：
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;img&gt;</span><br><span class="line">&lt;br/&gt;</span><br><span class="line">&lt;hr&gt;</span><br></pre></td></tr></table></figure>
-</code></pre>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1992,7 +1983,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">18</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -2042,7 +2033,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
