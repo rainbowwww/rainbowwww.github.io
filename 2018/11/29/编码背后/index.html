@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="读《编码》总结一因读了该书的三分之一，越往后读，越记不住前面的知识点，前后知识点关联脱节，于是就诞生这篇总结博客。 与门只有当两个继电器都被触发的时候灯泡才会亮。这样两个继电器的串联被称为一个”与门”  电器工程师用如下专门的符号表示一个与门  如果我们将开关闭合为1，开启为1，那么与门的输入与输出之间的关系可以用该表格表示：    And 0 1     0 0 0   1 0 1    或门并">
+<meta property="og:type" content="article">
+<meta property="og:title" content="编码背后">
+<meta property="og:url" content="http://yoursite.com/2018/11/29/编码背后/index.html">
+<meta property="og:site_name" content="rainbowwww">
+<meta property="og:description" content="读《编码》总结一因读了该书的三分之一，越往后读，越记不住前面的知识点，前后知识点关联脱节，于是就诞生这篇总结博客。 与门只有当两个继电器都被触发的时候灯泡才会亮。这样两个继电器的串联被称为一个”与门”  电器工程师用如下专门的符号表示一个与门  如果我们将开关闭合为1，开启为1，那么与门的输入与输出之间的关系可以用该表格表示：    And 0 1     0 0 0   1 0 1    或门并">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://i.loli.net/2018/11/29/5bff859660719.jpg">
+<meta property="og:image" content="https://i.loli.net/2018/11/29/5bff874ddf7c8.jpg">
+<meta property="og:image" content="https://i.loli.net/2018/11/29/5bff8a5e02266.jpg">
+<meta property="og:image" content="https://i.loli.net/2018/11/29/5bff8cb9cde71.jpg">
+<meta property="og:image" content="https://i.loli.net/2018/11/29/5bff909d26924.jpg">
+<meta property="og:image" content="https://i.loli.net/2018/11/29/5bff92703713d.jpg">
+<meta property="og:image" content="https://i.loli.net/2018/11/29/5bff983ee41b6.jpg">
+<meta property="og:image" content="https://i.loli.net/2018/11/29/5bff9a79ea6c2.jpg">
+<meta property="og:image" content="https://i.loli.net/2018/11/29/5bff9c86894c9.jpg">
+<meta property="og:image" content="https://i.loli.net/2018/11/29/5bffa770348ce.jpg">
+<meta property="og:image" content="https://i.loli.net/2018/11/29/5bffa8f7d67cf.jpg">
+<meta property="og:updated_time" content="1979-11-29T16:00:00.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="编码背后">
+<meta name="twitter:description" content="读《编码》总结一因读了该书的三分之一，越往后读，越记不住前面的知识点，前后知识点关联脱节，于是就诞生这篇总结博客。 与门只有当两个继电器都被触发的时候灯泡才会亮。这样两个继电器的串联被称为一个”与门”  电器工程师用如下专门的符号表示一个与门  如果我们将开关闭合为1，开启为1，那么与门的输入与输出之间的关系可以用该表格表示：    And 0 1     0 0 0   1 0 1    或门并">
+<meta name="twitter:image" content="https://i.loli.net/2018/11/29/5bff859660719.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/11/29/编码背后/">
+
+
+
+
+
+  <title>编码背后 | rainbowwww</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">rainbowwww</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/29/编码背后/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="caihong xu">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="rainbowwww">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">编码背后</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-29T20:21:59+08:00">
+                2018-11-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="读《编码》总结一"><a href="#读《编码》总结一" class="headerlink" title="读《编码》总结一"></a>读《编码》总结一</h3><p>因读了该书的三分之一，越往后读，越记不住前面的知识点，前后知识点关联脱节，于是就诞生这篇总结博客。</p>
+<h4 id="与门"><a href="#与门" class="headerlink" title="与门"></a>与门</h4><p>只有当两个继电器都被触发的时候灯泡才会亮。这样两个继电器的串联被称为一个”与门”</p>
+<p><img src="https://i.loli.net/2018/11/29/5bff859660719.jpg" alt="anddoor.jpg"></p>
+<p>电器工程师用如下专门的符号表示一个与门</p>
+<p><img src="https://i.loli.net/2018/11/29/5bff874ddf7c8.jpg" alt="anddoorsymbol.jpg"></p>
+<p>如果我们将开关闭合为1，开启为1，那么与门的输入与输出之间的关系可以用该表格表示：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">And</th>
+<th style="text-align:center">0</th>
+<th style="text-align:center">1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+</tr>
+</tbody>
+</table>
+<h4 id="或门"><a href="#或门" class="headerlink" title="或门"></a>或门</h4><p>并联电路，两个继电器的输出是接在一起的，这个连在一起的输出为灯泡提供了电源。任何一个继电器都能点亮灯泡。当上面的开关或下面的开关闭合，灯泡都会发光，这里的关键词是或，因此这样的门被称为“或门”</p>
+<p><img src="https://i.loli.net/2018/11/29/5bff8a5e02266.jpg" alt="ordoor.jpg"></p>
+<p>电器工程师用如下专门的符号表示一个或门</p>
+<p><img src="https://i.loli.net/2018/11/29/5bff8cb9cde71.jpg" alt="ordoorsymbol.jpg"></p>
+<p>如果我们将开关闭合为1，开启为1，那么或门的输入与输出之间的关系可以用该表格表示：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">or</th>
+<th style="text-align:center">0</th>
+<th style="text-align:center">1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+</tr>
+</tbody>
+</table>
+<h4 id="反向器"><a href="#反向器" class="headerlink" title="反向器"></a>反向器</h4><p>开关断开时，灯泡被点亮。开关闭合时，灯泡就会熄灭。以这种方式连接的继电器叫反向器。反向器不是逻辑门（一个逻辑门通常有两个或多个输入）如下符号表示反向器:</p>
+<p><img src="https://i.loli.net/2018/11/29/5bff909d26924.jpg" alt="inverter.jpg"></p>
+<h4 id="或非门"><a href="#或非门" class="headerlink" title="或非门"></a>或非门</h4><p><img src="https://i.loli.net/2018/11/29/5bff92703713d.jpg" alt="NOR.jpg"></p>
+<p>如上图所示上面的开关闭合，灯泡就会熄灭。下面的开关闭合，灯泡也会熄灭。如果两个开关全部闭合，灯泡也不亮。只有当两个开关断开才会亮。</p>
+<p>这些结果恰恰与或门相反，这个门称为”或非门”，用以下符号表示：</p>
+<p><img src="https://i.loli.net/2018/11/29/5bff983ee41b6.jpg" alt="ordoorsymbol.jpg"></p>
+<p>或非门的输出如下：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">NOR</th>
+<th style="text-align:center">0</th>
+<th style="text-align:center">1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+</tr>
+</tbody>
+</table>
+<h4 id="与非门"><a href="#与非门" class="headerlink" title="与非门"></a>与非门</h4><p><img src="https://i.loli.net/2018/11/29/5bff9a79ea6c2.jpg" alt="NAND.jpg"></p>
+<p>如上图所示，两个开关断开，灯泡是亮的。上面开关闭合，灯泡是亮的。下面的开关闭合，灯泡也是亮的。只有当两个开关都闭合灯泡才会熄灭。</p>
+<p>这一结果和与门恰恰相反，这种逻辑门被称为与非门或简称NAND。用以下符号表示：</p>
+<p><img src="https://i.loli.net/2018/11/29/5bff9c86894c9.jpg" alt="NANDsymbol.jpg"></p>
+<p>与非门的输出如下：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">NAND</th>
+<th style="text-align:center">0</th>
+<th style="text-align:center">1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+</tr>
+</tbody>
+</table>
+<h3 id="异或门"><a href="#异或门" class="headerlink" title="异或门"></a>异或门</h3><p><img src="https://i.loli.net/2018/11/29/5bffa770348ce.jpg" alt="xor.jpg"></p>
+<p>为了实现二进制的加法位，设计了如上图所示电路。该电路叫异或门，简写XOR。</p>
+<p>最后得到的输出结果为</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">输入A</th>
+<th style="text-align:center">输入B</th>
+<th style="text-align:center">或门输出</th>
+<th style="text-align:center">与非门输出</th>
+<th style="text-align:center">与门输出</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+</tr>
+<tr>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+</tr>
+</tbody>
+</table>
+<p>用特定的电器符号表示</p>
+<p><img src="https://i.loli.net/2018/11/29/5bffa8f7d67cf.jpg" alt="XORSYMBOL.jpg"></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/11/03/cookie和session/" rel="next" title="cookie和session">
+                <i class="fa fa-chevron-left"></i> cookie和session
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/04/07/正则的使用/" rel="prev" title="正则的使用">
+                正则的使用 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">caihong xu</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">tags</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#读《编码》总结一"><span class="nav-number">1.</span> <span class="nav-text">读《编码》总结一</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#与门"><span class="nav-number">1.1.</span> <span class="nav-text">与门</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#或门"><span class="nav-number">1.2.</span> <span class="nav-text">或门</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#反向器"><span class="nav-number">1.3.</span> <span class="nav-text">反向器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#或非门"><span class="nav-number">1.4.</span> <span class="nav-text">或非门</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#与非门"><span class="nav-number">1.5.</span> <span class="nav-text">与非门</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#异或门"><span class="nav-number">2.</span> <span class="nav-text">异或门</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">caihong xu</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
